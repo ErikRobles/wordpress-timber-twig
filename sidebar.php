@@ -1,6 +1,7 @@
 <?php
 /**
- * The Template for the sidebar containing the main widget area
+ * The Template for displaying all single posts
+ *
  *
  * @package  WordPress
  * @subpackage  Timber

@@ -8,14 +8,13 @@
  * @subpackage  Timber
  * @since    Timber 0.1
  */
-
 global $wp_query;
 
-$context          = Timber::context();
-$context['posts'] = new Timber\PostQuery();
+$data = Timber::get_context();
+$data['posts'] = Timber::get_posts();
 if ( isset( $wp_query->query_vars['author'] ) ) {
-	$author            = new Timber\User( $wp_query->query_vars['author'] );
-	$context['author'] = $author;
-	$context['title']  = 'Author Archives: ' . $author->name();
+	$author = new TimberUser( $wp_query->query_vars['author'] );
+	$data['author'] = $author;
+	$data['title'] = 'Author Archives: ' . $author->name();
 }
-Timber::render( array( 'author.twig', 'archive.twig' ), $context );
+Timber::render( array( 'author.twig', 'archive.twig' ), $data );
