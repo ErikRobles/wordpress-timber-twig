@@ -1,8 +1,9 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  {{post.main_tagline}}
-  <hr>
-  {{post.sub_tagline}}
-  <hr>
+  {% set img = TimberImage(post.hero_image) %}
+
+  <img src="{{img.src}}" alt="{{img.title}}">
+  <p class="hero-tagline-main">{{post.main_tagline}}</p>
+  <p class="hero-tagline-sub">{{post.sub_tagline}}</p>
 {% endblock %}
