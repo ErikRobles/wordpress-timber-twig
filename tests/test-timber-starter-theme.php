@@ -12,7 +12,7 @@
 		}
 
 		function testFunctionsPHP() {
-			$context = Timber::context();
+			$context = Timber::get_context();
 			$this->assertEquals('StarterSite', get_class($context['site']));
 			$this->assertTrue(current_theme_supports('post-thumbnails'));
 			$this->assertEquals('bar', $context['foo']);
@@ -25,11 +25,11 @@
 		}
 
 		static function _setupStarterTheme(){
-			$dest = WP_CONTENT_DIR.'/themes/starter-theme/';
-			$src = __DIR__.'/../../starter-theme/';
+			$dest = WP_CONTENT_DIR.'/themes/timber-starter-theme/';
+			$src = __DIR__.'/../../timber-starter-theme/';
 			if (is_dir($src)) {
 				self::_copyDirectory($src, $dest);
-				switch_theme('starter-theme');
+				switch_theme('timber-starter-theme');
 			} else {
 				echo 'no its not';
 			}

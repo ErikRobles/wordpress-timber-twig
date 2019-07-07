@@ -1,34 +1,35 @@
-# Timber Starter Theme (Tackle Box version)
 
-With comments!
+# The Timber Starter Theme
+
+The "_s" for Timber: a dead-simple theme that you can build from. The primary purpose of this theme is to provide a file structure rather than a framework for markup or styles. Configure your Sass, scripts, and task runners however you would like!
+
+[![Build Status](https://travis-ci.org/Upstatement/timber-starter-theme.svg)](https://travis-ci.org/Upstatement/timber-starter-theme)
+
+## Installing the Theme
+
+Install this theme as you would any other, and be sure the Timber plugin is activated. But hey, let's break it down into some bullets:
+
+1. Make sure you have installed the plugin for the [Timber Library](https://wordpress.org/plugins/timber-library/) (and Advanced Custom Fields - they [play quite nicely](https://github.com/jarednova/timber/wiki/ACF-Cookbook) together). 
+2. Download the zip for this theme (or clone it) and move it to `wp-content/themes` in your WordPress installation. 
+3. Rename the folder to something that makes sense for your website (generally no spaces and all lowercase). You could keep the name `timber-starter-theme` but the point of a starter theme is to make it your own!
+4. Activate the theme in Appearance >  Themes.
+5. Do your thing! And read [the docs](https://github.com/jarednova/timber/wiki).
 
 ## What's here?
 
-`assets/` contains static front-end files and images. In other words, your Sass files, JS files, SVGs, or any PNGs would live here.
+`static/` is where you can keep your static front-end scripts, styles, or images. In other words, your Sass files, JS files, fonts, and SVGs would live here.
 
-`acf-json/` contains JSON files for tracking Advanced Custom Fields. This is incredibly useful for version control. After cloning this repository, you can go into Custom Fields from the Dashboard and select "Sync" to import these custom fields into your theme.
+`templates/` contains all of your Twig templates. These pretty much correspond 1 to 1 with the PHP files that respond to the WordPress template hierarchy. At the end of each PHP template, you'll notice a `Timber::render()` function whose first parameter is the Twig file where that data (or `$context`) will be used. Just an FYI.
 
-`lib/` contains files for custom post type arguments and taxonomies. These are added to WordPress inside functions.php and could be included there, but are separated into other files to keep functions.php a bit cleaner.
+`bin/` and `tests/` ... basically don't worry about (or remove) these unless you know what they are and want to.
 
-`views/` contains all of your Twig templates. These correspond 1 to 1 with the PHP files that make the data available to the Twig templates.
+## Other Resources
 
-`front-page.php` and `views/front-page.twig` are templates for a static home page should you choose to use one. This template will automatically be applied to that page whatever its name may be.
+The [main Timber Wiki](https://github.com/jarednova/timber/wiki) is super great, so reference those often. Also, check out these articles and projects for more info:
 
-## Installing
+* [This branch](https://github.com/laras126/timber-starter-theme/tree/tackle-box) of the starter theme has some more example code with ACF and a slightly different set up.
+* [Twig for Timber Cheatsheet](http://notlaura.com/the-twig-for-timber-cheatsheet/)
+* [Timber and Twig Reignited My Love for WordPress](https://css-tricks.com/timber-and-twig-reignited-my-love-for-wordpress/) on CSS-Tricks
+* [A real live Timber theme](https://github.com/laras126/yuling-theme).
+* [Timber Video Tutorials](https://github.com/jarednova/timber/wiki/Video-Tutorials) and [an incomplete set of screencasts](https://www.youtube.com/playlist?list=PLuIlodXmVQ6pkqWyR6mtQ5gQZ6BrnuFx-) for building a Timber theme from scratch.
 
-1. Make sure you have installed the plugins for the Timber Library and Advanced Custom Fields. You can find these by searching for them in Plugins > Add New.
-2. Download the zip for this theme (or clone it) and move it to `wp-content/themes` in your WordPress installation. 
-3. Rename the folder to something that makes sense for you website. It should be a short name with no spaces - underscores and hyphens are okay - and all lowercase.
-4. Activate the theme in Appearance >  Themes.
-5. You should see a notice that Timber needs to be activated; go to Plugins > All and activate both Timber and Advanced Custom Fields (ACF for short.)
-6. Set a static home page in Settings > Reading and choosing "A Static Page". This will automatically act as your home page and will reference the `views/front-page.twig` template.
-
-## Working in the Theme
-
-There is an example of a custom post type called "Cocktails". You can create your own at [generatewp.com](http://generatewp.com) and add that array to `lib/custom-types.php`.
-
-Custom Fields can be customized from the Custom Fields section in the Dashboard menu. 
-
-Read the notes in `views/page-content.twig` and `views/front-page.twig` for notes on using ACF in your templates, and general Twig info.
-
-## More soon!

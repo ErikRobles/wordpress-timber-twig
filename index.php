@@ -18,12 +18,8 @@ if ( ! class_exists( 'Timber' ) ) {
 	return;
 }
 $context = Timber::get_context();
-
-// We can access the loop of WordPress posts with the 'posts' variable.
 $context['posts'] = Timber::get_posts();
-
-
-// If we are on the home page, add a few other templates to our hierarchy.
+$context['foo'] = 'bar';
 $templates = array( 'index.twig' );
 if ( is_home() ) {
 	array_unshift( $templates, 'front-page.twig', 'home.twig' );

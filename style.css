@@ -1,24 +1,10 @@
 /*
- * Theme Name: Timber Starter Theme (Tackle Box version)
+ * Theme Name: My Timber Starter Theme
  * Description: Starter Theme to use with Timber
- * Author: Upstatement, Lara, and YOU!
+ * Author: Upstatement and YOU!
 */
-
-nav ul li {
-    list-style: none;
-    float: left;
-    font-weight: bold;
-    padding-right: 30px;
-}
-
-nav ul {
-    display: inline-block;
-    padding-left: 0;
-}
-
-.footer {
+footer {
     background-color: #333;
     text-align: center;
-    padding: 30px;
-    color: #fff;
+    min-height: 100px;
 }
