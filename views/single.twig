@@ -11,8 +11,29 @@
 					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.date }}
 				</p>
 				<div class="article-body">
+				<h1>Hello Dudes!!!</h1>
 					{{post.content}}
 				</div>
+			</section>
+
+			<!-- comment box -->
+			<section class="comment-box">
+				<!-- comments -->
+				<div class="comments">
+				    {% if post.comments %}
+					<h3> comments </h3>
+					{% for cmt in post.comments %}
+					    {% include "comment.twig" with {comment:cmt} %}
+					{% endfor %}
+				    {% endif %}
+				</div>
+
+				{% if post.comment_status == "closed" %}
+					<p> comments for this post are closed </p>
+				{% else %}
+				    <!-- comment form -->
+				    {% include "comment-form.twig" %}
+				{% endif %}
 			</section>
 		</article>
 	</div><!-- /content-wrapper -->
